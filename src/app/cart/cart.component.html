@@ -1,0 +1,26 @@
+<h1>Shopping cart</h1>
+<p>Please select the product you are interested with and drag it into the Cart!</p>
+<section class="cart-info">
+  <h2>Cart information</h2>
+  <a [routerLink]="['/checkout']">Proceed to checkout</a>
+</section>
+<section id="products">
+  <div id="product-list">
+    <ul>
+      <li>
+        <section>
+          <div draggable="true" (dragstart)="drag($event)">
+            <img src="assets/images/products/happy-advocado.png">
+          </div>
+          <div>Happy Advocado</div>
+        </section>
+      </li>
+      <li>Product Two</li>
+      <li>Product Three</li>
+    </ul>
+  </div>
+</section>
+<section id="cart">
+    <img src="assets/images/icons/empty-shopping-cart.png" alt="cart icon"
+      (dragover)="allowDrop($event)" (drop)="drop($event)" class="cart-image" />
+</section>
