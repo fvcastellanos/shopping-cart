@@ -1,0 +1,42 @@
+.profile {
+    width: 90%;
+}
+
+.profile li {
+    list-style-type: none;
+}
+
+.profile div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.profile div:first-child {
+    width: 32px;
+    height: 32px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.profile div:nth-child(2) {
+    display: inline;
+    vertical-align: top;
+    margin-left: 0.5em;
+}
+
+#description {
+    width: 90%;
+    text-align: justify;
+}
+
+#products {
+    width: 90%;
+}
+
+#products video {
+    width: 100%;
+    margin-bottom: 1em;
+}
