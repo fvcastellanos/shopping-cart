@@ -1,0 +1,146 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(255, 255, 255, 0.55);
+    background-color: #5e42a6;
+    font-size: 1.15em;
+}
+
+h1 {
+    color: white;
+    font-size: 2.25em;
+}
+
+#side-bar {
+    width: 20%;
+    background-color: #312450;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    bottom: 0;
+}
+
+#side-bar nav a {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: block;
+    padding: 1.35em 0;
+    position: relative;
+}
+
+#side-bar nav a:hover {
+    color: #fff;
+}
+
+#side-bar li {
+    list-style-type: none;
+}
+
+.menu {
+    text-align: right;
+    margin-right: 3em;
+}
+
+.main {
+    width: 80%; 
+    right:0;
+    top: 0;
+    bottom: 0;
+    margin-left: 20%;
+    padding-left: 1em;
+}
+
+.profile {
+    width: 90%;
+}
+
+.profile li {
+    list-style-type: none;
+}
+
+.profile div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.profile div:first-child {
+    width: 32px;
+    height: 32px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.profile div:nth-child(2) {
+    display: inline;
+    vertical-align: top;
+    margin-left: 0.5em;
+}
+
+#description {
+    width: 90%;
+    text-align: justify;
+}
+
+#products {
+    width: 90%;
+}
+
+#products video {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .main {
+        width: 100%; 
+        display: block; 
+        margin-left: 0.5em;
+        margin-top: 1.5em;
+        padding-top: 0.5em;
+        padding-left: 0;
+    }
+
+    #side-bar {
+        display: block;
+        height: 3em;
+        width: 100%; 
+        background-color: #312450;
+    }
+
+    #side-bar nav ul {
+        display: inline;
+    }
+
+    #side-bar nav a {
+        font-size: 0.6em;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: inline-block;
+    } 
+
+    #side-bar nav a:hover {
+        color: #fff;
+    }
+
+    #side-bar li {
+        list-style-type: none;
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 0.5em;
+    }
+
+    .menu {
+        text-align: left;
+    } 
+}

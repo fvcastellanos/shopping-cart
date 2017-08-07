@@ -1,0 +1,24 @@
+<h1>Shopping cart</h1>
+<div id="team">
+    <h2>Team members</h2>
+    <ul class="profile">
+        <li>
+            <div><img src="images/perfil-fulano.png" alt="foto integrante"/></div>
+            <div>Fulano de Tal</div>
+        </li>
+        <li>
+            <div><img src="images/perfil-fulano.png" alt="foto integrante"/></div>
+            <div>Mengano de Tal</div>
+        </li>
+    </ul>
+</div>
+<div id="description">
+    <h2>Site description</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing, elit nec sociis magna taciti faucibus accumsan, sed tempus netus aliquet sodales. Tristique fringilla bibendum augue sagittis senectus pulvinar mollis conubia, consequat viverra per pellentesque elementum et lobortis penatibus, morbi ultrices dui sodales class suscipit gravida. Pharetra fames imperdiet diam mauris ridiculus magnis, ad ut placerat enim sollicitudin, leo dui sociis condimentum at.</p><p>Mus sem lectus non ultricies tempor donec, ridiculus metus tristique malesuada suspendisse est litora, volutpat rhoncus condimentum vel torquent. Vulputate libero vel mollis viverra et potenti nec euismod cum condimentum, elementum nunc hac luctus in ullamcorper velit ridiculus litora. Erat senectus montes quisque nulla a condimentum duis nunc inceptos, scelerisque quis per rhoncus augue vitae luctus non, ullamcorper commodo libero hac euismod interdum lacus tristique.</p>
+</div>
+<div id="products">
+    <h2>Products</h2>
+        <video controls>
+        <source src="http://download.blender.org/peach/trailer/trailer_400p.ogg" >
+    </video> 
+</div>
