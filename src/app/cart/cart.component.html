@@ -2,21 +2,45 @@
 <p>Please select the product you are interested with and drag it into the Cart!</p>
 <section class="cart-info">
   <h2>Cart information</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Quantity</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Sub-Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.amount }}</td>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>{{ item.getTotal() }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Total</td>
+        <td>{{ total }}</td>
+      </tr>
+    </tfoot>
+  </table>
   <a [routerLink]="['/checkout']">Proceed to checkout</a>
 </section>
 <section id="products">
   <div id="product-list">
     <ul>
-      <li>
+      <li *ngFor="let product of products">
         <section>
-          <div draggable="true" (dragstart)="drag($event)">
-            <img src="assets/images/products/happy-advocado.png">
+          <div draggable="true" (dragstart)="drag($event, product)">
+            <img src="{{ product.imagePath }}">
           </div>
-          <div>Happy Advocado</div>
+          <div>{{ product.name }}</div>
         </section>
       </li>
-      <li>Product Two</li>
-      <li>Product Three</li>
     </ul>
   </div>
 </section>
