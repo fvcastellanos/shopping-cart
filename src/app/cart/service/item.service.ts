@@ -28,9 +28,22 @@ export class ItemService {
     let item : Item = this.findProduct(product);
 
     if (item != null) {
-      if (item.amount > 0) {
-        item.amount--;
-      } else {
+      item.amount--;
+
+      if (item.amount <= 0) {
+        let list = this.removeItemsWithAmountZero();
+        this._items = list;
+      }
+    }
+  }
+
+  updateQuantity(product: Product, quantity: number) {
+    let item : Item = this.findProduct(product);
+
+    if (item != null) {
+      item.amount = quantity;
+
+      if (item.amount <= 0) {
         let list = this.removeItemsWithAmountZero();
         this._items = list;
       }
@@ -51,17 +64,7 @@ export class ItemService {
     return this._items;
   }
 
-  private removeItemsWithAmountZero() : Item [] {
-    return this._items.filter((item) => {
-          if (item.amount > 0) {
-            return true;
-          }
-
-          return false;
-        });
-  }
-
-  private findProduct(product: Product) : Item {
+  findProduct(product: Product) : Item {
     return this._items.find((item) => {
       if (item.product.id === product.id) {
         return true;
@@ -71,4 +74,15 @@ export class ItemService {
     });
   }
 
+  private removeItemsWithAmountZero() : Item [] {
+    console.log('removing items from cart');
+
+    return this._items.filter((item) => {
+          if (item.amount > 0) {
+            return true;
+          }
+
+          return false;
+        });
+  }
 }

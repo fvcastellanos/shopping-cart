@@ -13,14 +13,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of items">
-        <td><input type="number" class="quantity" value="{{item.amount}}" (change)="onQuantityChange(item.product.id)" /></td>
+        <td><input type="number" class="quantity" value="{{item.amount}}" (change)="onQuantityChange($event, item.product)" /></td>
         <td>{{ item.product.name }}</td>
         <td>{{ item.product.price }}</td>
         <td>{{ item.getTotal() }}</td>
-        <!-- <td>{{ item.amount }}</td>
-        <td>{{ item.product.name }}</td>
-        <td>{{ item.product.price }}</td>
-        <td>{{ item.getTotal() }}</td> -->
       </tr>
     </tbody>
     <tfoot>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from "../cart/service/item.service";
 import { Item } from "../cart/model/item";
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Product } from "../cart/model/product";
 
 @Component({
   selector: 'app-checkout',
@@ -11,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CheckoutComponent implements OnInit {
 
   public items: Item[];
-  public readonly total: number;
+  public total: number;
 
   public checkoutForm: FormGroup;
 
@@ -22,15 +23,13 @@ export class CheckoutComponent implements OnInit {
    }
 
   ngOnInit() {
-    // this.checkoutForm = this._formBuilder.group({
-    //   id: [],
-    //   values: []
-    // });
   }
 
-  onQuantityChange(inputId: number) {
-    let value = document.getElementById(inputId.toString());
+  onQuantityChange(ev: any, product: Product) {
+    let value : number = ev.target.value;
+    this._itemService.updateQuantity(product, value);
 
-    console.log(value.innerHTML);
+    this.total = this._itemService.getTotal();
+    this.items = this._itemService.getItems();
   }
 }
