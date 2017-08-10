@@ -58,6 +58,18 @@
     font-weight: bold;
 }
 
+.cart-info table {
+    font-size: 0.8em;
+    color: white;
+    width: 40%;
+    text-align: right;
+    margin-bottom: 1em;
+}
+
+.cart-info th, td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+}
+
 @media only screen and (max-width: 640px) {
 
     #cart {
@@ -96,6 +108,11 @@
         font-size: 0.5em;
         text-transform: uppercase;
         text-align: left;
+    }
+
+    .cart-info table {
+        font-size: 0.6em;
+        width: 70%;
     }
     
 }

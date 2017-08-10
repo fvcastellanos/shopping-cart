@@ -1,3 +1,31 @@
-<p>
-  checkout works!
-</p>
+<h1>Checkout</h1>
+<p>Please review your items and complete the transaction</p>
+<h2>Cart information</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Quantity</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Sub-Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td><input type="number" class="quantity" value="{{item.amount}}" (change)="onQuantityChange($event, item.product)" /></td>
+        <td>{{ item.product.name }}</td>
+        <td>{{ item.product.price }}</td>
+        <td>{{ item.getTotal() }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td>Total</td>
+        <td>{{ total }}</td>
+      </tr>
+    </tfoot>
+  </table>
+  
