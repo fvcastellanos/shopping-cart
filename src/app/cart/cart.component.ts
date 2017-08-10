@@ -16,10 +16,8 @@ export class CartComponent implements OnInit {
   public total: number;
 
   constructor(private _cartService: CartService,
-    private _itemService: ItemService) { 
-    this.products = _cartService.getAllProducts();
-    this.items = this._itemService.getItems();
-    this.total = this._itemService.getTotal();
+              private _itemService: ItemService) { 
+    this.loadProducts();
   }
 
   ngOnInit() {
@@ -42,5 +40,22 @@ export class CartComponent implements OnInit {
     this.total = this._itemService.getTotal();
 
     console.log("drop completed: " + this._itemService.getTotal().toString());
+  }
+
+  deleteDatabase() {
+    this._cartService.deleteAllProducts().then(() => {
+      this._itemService.clearItems();
+      this.loadProducts()
+    });
+  }
+
+  initDatabase() {
+    this._cartService.initDataStore();
+  }
+
+  private loadProducts() {
+    this.products = this._cartService.getAllProducts();
+    this.items = this._itemService.getItems();
+    this.total = this._itemService.getTotal();
   }
 }

@@ -74,6 +74,10 @@ export class ItemService {
     });
   }
 
+  clearItems() {
+    this._items = new Array();
+  }
+
   private removeItemsWithAmountZero() : Item [] {
     console.log('removing items from cart');
 

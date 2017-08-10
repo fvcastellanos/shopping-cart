@@ -29,8 +29,8 @@ import { ProductService } from "./cart/service/product.service";
   ],
   providers: [
     CartService,
+    ProductService,
     ItemService,
-    ProductService
   ],
   bootstrap: [AppComponent]
 })

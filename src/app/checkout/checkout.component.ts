@@ -18,11 +18,11 @@ export class CheckoutComponent implements OnInit {
 
   constructor(private _itemService: ItemService,
               private _formBuilder: FormBuilder) {
-    this.items = this._itemService.getItems();
-    this.total = this._itemService.getTotal();
    }
 
   ngOnInit() {
+    this.items = this._itemService.getItems();
+    this.total = this._itemService.getTotal();
   }
 
   onQuantityChange(ev: any, product: Product) {

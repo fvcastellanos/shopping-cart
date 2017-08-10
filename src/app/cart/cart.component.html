@@ -48,3 +48,8 @@
     <img src="assets/images/icons/empty-shopping-cart.png" alt="cart icon"
       (dragover)="allowDrop($event)" (drop)="drop($event)" class="cart-image" />
 </section>
+<section id="debug">
+  <input type="button" value="Init Database" (click)="initDatabase()" />
+  <input type="button" value="Delete Database" (click)="deleteDatabase()" />
+
+</section>

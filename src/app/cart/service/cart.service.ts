@@ -11,7 +11,7 @@ export class CartService {
   constructor(private _itemService: ItemService,
               private _productService: ProductService) { 
     // this._products = CartService.initDatabase();
-    this._products = this._productService.getProducts();
+    this.initDataStore();
   }
 
   getAllProducts() : Product [] {
@@ -24,6 +24,30 @@ export class CartService {
     this._itemService.addItem(product);
   }
 
+  deleteAllProducts() {
+    let promise = new Promise((resolve, reject) => {
+      this._productService.deleteDatabase().then((value) => {
+          console.log("database deleted");
+          this._products = new Array();
+          resolve();
+        }, (error) => 
+        {
+          console.log(error);
+          reject();
+        });
+        
+      });
+
+    return promise;
+  }
+
+  initDataStore() {
+    this._productService.loadProducts().then(
+      () => { this.loadProducts(); },
+      (error) => { console.log(error); }
+    );
+  }
+  
   private getProductById(_id: number) : Product {
     let item : Product = 
       this._products.find((product: Product) => {
@@ -37,6 +61,16 @@ export class CartService {
     return item;
   }
 
+  private loadProducts() {
+    this._products = new Array();
+
+    this._productService.getProducts().then((value) => {
+      this._products = value;
+    }, (error) => {
+      console.log("unable to get products: ", error);
+    });
+  }
+
   private static initDatabase() : Product [] {
     console.log("adding products");
     let products: Product [] = new Array(3);
@@ -47,6 +81,5 @@ export class CartService {
 
     return products;
   }
-
-
+  
 }
