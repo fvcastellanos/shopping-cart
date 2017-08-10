@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Product } from "../model/product";
 import { ItemService } from "./item.service";
+import { ProductService } from "./product.service";
 
 @Injectable()
 export class CartService {
 
   private _products: Product [];
 
-  constructor(private _itemService: ItemService) { 
-    this._products = CartService.initDatabase();
+  constructor(private _itemService: ItemService,
+              private _productService: ProductService) { 
+    // this._products = CartService.initDatabase();
+    this._products = this._productService.getProducts();
   }
 
   getAllProducts() : Product [] {

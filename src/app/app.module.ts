@@ -11,6 +11,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CartService } from "./cart/service/cart.service";
 import { ItemService } from "./cart/service/item.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ProductService } from "./cart/service/product.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
   ],
   providers: [
     CartService,
-    ItemService
+    ItemService,
+    ProductService
   ],
   bootstrap: [AppComponent]
 })
