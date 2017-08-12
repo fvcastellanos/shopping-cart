@@ -1,6 +1,6 @@
 FROM httpd:latest
 
-WORKDIR /usr/local/apache2/htdocs/sc
+WORKDIR /usr/local/apache2/htdocs
 
 COPY dist/ ./
 
